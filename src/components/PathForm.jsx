@@ -29,7 +29,7 @@ const PathForm = ({ onPathSubmit, defaultValue }) => {
   return (
     <form onSubmit={handleSubmit} className="navbar">
       <label>
-        Enter Santa's path (cities):
+        Enter Santa's path (cities e.g "Helsinki, Oulu, etc"):
         <input type="text" value={path} onChange={event => setPath(event.target.value)} />
       </label>
       <button type="submit">Submit</button>
