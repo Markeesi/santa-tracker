@@ -1,7 +1,7 @@
 // Map.jsx
 
 import React, { useState, useEffect } from 'react';
-import { MapContainer, TileLayer, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, useMap, ZoomControl } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import Santa from './Santa';
@@ -44,7 +44,8 @@ const Map = ({ santaPath }) => {
   }, [pathIndex, santaPath]);
 
   return (
-    <MapContainer center={santaPosition} zoom={6} style={{ height: "100vh", width: "100%" }}>
+    <MapContainer center={santaPosition} zoom={6} style={{ height: "100vh", width: "100%" }} zoomControl={false}>
+      <ZoomControl position="bottomright" />
       <ChangeView center={santaPosition} zoom={6} />
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
