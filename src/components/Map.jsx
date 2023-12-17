@@ -44,7 +44,7 @@ const Map = ({ santaPath }) => {
   }, [pathIndex, santaPath]);
 
   return (
-    <MapContainer center={santaPosition} zoom={6} style={{ height: "100vh", width: "100%" }} zoomControl={false}>
+    <MapContainer center={santaPosition} zoom={6} style={{ height: "100vh", width: "100%" }} className="map-container" zoomControl={false}>
       <ZoomControl position="bottomright" />
       <ChangeView center={santaPosition} zoom={6} />
       <TileLayer

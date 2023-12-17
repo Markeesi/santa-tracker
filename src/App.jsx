@@ -30,7 +30,7 @@ function App() {
 }
 
   const handlePathSubmit = (path) => {
-    const steps = 100; // Number of steps between each pair of coordinates
+    const steps = 12; // Number of steps between each pair of coordinates
     const interpolatedPath = [];
   
     for (let i = 0; i < path.length - 1; i++) {
@@ -50,7 +50,9 @@ function App() {
 
   return (
     <div className="App">
+  
       <PathForm onPathSubmit={handlePathSubmit} defaultValue="Korvatunturi" />
+      
       <Map santaPath={santaPath}/>
     </div>
   );

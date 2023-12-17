@@ -1,12 +1,52 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: block;
+  padding-top: 2rem;
+  margin: 2rem;
+}
+
 .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #f8f9fa;
-    padding: 10px 0;
-    z-index: 1000;
+  color: #fff;
+}
+
+.path-form label {
+  font-size: 2.6rem; /* Adjust as needed */
+  font-weight: bold;
+}
+
+.path-form {
+  background-color: red;
+  padding: 10px; /* Adjust as needed */
+  margin-bottom: 10px; /* Adjust as needed */
+  font-size: 2.4rem; /* Adjust as needed */
+  font-weight: bold;
+}
+
+.path-form button {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.path-form input {
+  width: 70%; /* Adjust as needed */
+  font-size: 2rem;
+}
+
+.map-container {
+  border: 1px solid #000; /* Add a border */
+  background-color: white; /* Set a background color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow for a window-like effect */
+  height: 800rem; /* Change to viewport height */
+  width: 100%; /* Change to percentage */
+  max-width: 100%; /* Set a max-width */
+}
+
+@media (max-width: 768px) {
+  .map-container {
+    width: 100%; /* Full width on small screens */
+    height: 60vh; /* Adjust height as needed */
   }
-  
-  .navbar input {
-    margin-right: 10px;
-  }
+}
