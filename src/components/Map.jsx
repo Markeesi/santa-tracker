@@ -19,13 +19,14 @@ L.Icon.Default.mergeOptions({
 
 const ChangeView = ({ center, zoom }) => {
   const map = useMap();
-  map.setView(center, zoom);
+  map.flyTo(center, map.getZoom());
   return null;
 }
 
 const Map = ({ santaPath }) => {
   const [santaPosition, setSantaPosition] = useState([68.0736, 29.3153]);
   const [pathIndex, setPathIndex] = useState(0);
+  const [zoom, setZoom] = useState(6);
 
   useEffect(() => {
     if (!Array.isArray(santaPath)) return; // Add this line
@@ -44,9 +45,9 @@ const Map = ({ santaPath }) => {
   }, [pathIndex, santaPath]);
 
   return (
-    <MapContainer center={santaPosition} zoom={6} style={{ height: "100vh", width: "100%" }} className="map-container" zoomControl={false}>
+    <MapContainer center={santaPosition} zoom={zoom} style={{ height: "100vh", width: "100%" }} className="map-container" zoomControl={false} onzoomend={(e) => setZoom(e.target.getZoom())}>
       <ZoomControl position="bottomright" />
-      <ChangeView center={santaPosition} zoom={6} />
+      <ChangeView center={santaPosition} zoom={zoom} />
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
